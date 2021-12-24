@@ -1,0 +1,32 @@
+needParsing:
+  ObjID: True
+  ObjData: True
+  ObjPhoto: True
+
+path:
+  objID: '../tmp/ids.pkl'
+  objData: '../tmp/data.pkl'
+  objPhoto: '../data/photo/'
+
+savingParams:
+  needSave: True
+  dataPath: '../data/houses_data'
+  ToPkl: True
+  ToCsv: True
+  ToExcel: True
+  ToDB: True
+
+DBParams:
+  DBPath: '../db/houses_db.sqlite'
+  tableName: 'data'
+
+getPhotoParams:
+  objID:
+    - 41372
+    - 44037
+    - 43817
+    - 40158
+    - 40054
+    - 27240
+
+

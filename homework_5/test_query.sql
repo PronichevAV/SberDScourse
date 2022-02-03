@@ -48,6 +48,7 @@ WHERE OrderDetails.ProductID =
     )
 
 /* Выведите топ 5 поставщиков по количеству заказов, выведите их названия, страну, контактное лицо и телефон */
+SELECT SupplierName, Country, Phone
 FROM OrderDetails
     JOIN Products
 ON OrderDetails.ProductID = Products.ProductID

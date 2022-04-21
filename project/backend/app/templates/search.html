@@ -3,14 +3,28 @@
 {% block body %}
     <div class="jumbotron text-left d-flex flex-column">
         <br>
-        <h1>Поиск вакансий</h1><br>
-    {% from 'includes/_formhelpers.html' import render_field %}
+        <h1>Поиск вакансий</h1>
+        {% if not vacancies %}
+        <br><h4>Текстовый ввод</h4>
+        {% from 'includes/_formhelpers.html' import render_field %}
         <form method="POST" action="">
             <div class="form-group" style="width:100%">
                 {{ render_field(form.query, class_="form-control") }}
             </div><br>
             <p><input type="submit" class="btn btn-primary" value="Выполнить"></p>
         </form>
+        <br>
+        <h4>Голосовой ввод</h4><br>
+        <div id="controls">
+            <button id="recordButton">Запись</button>
+            <button id="pauseButton" disabled>Пауза</button>
+            <button id="stopButton" disabled>Стоп</button>
+        </div>
+            <div id="formats"></div>
+                <br>
+                <p><strong>Запросы:</strong></p>
+                <ol id="recordingsList"></ol>
+        {% endif %}
         {% if vacancies %}
         {% include "includes/_messages.html" %}
         <br><h3>Наиболее подходящие вакансии</h3><br>

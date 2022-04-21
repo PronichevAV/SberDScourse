@@ -4,6 +4,10 @@ import random
 import re
 from functools import partial
 
+from vosk import Model, KaldiRecognizer
+import json
+import wave
+
 import plotly
 import plotly.express as px
 
@@ -31,7 +35,11 @@ class Domain:
         self.data_pipeline()
         self.models = {'TF-IDF': ModelTfIdf(db_path=self.config.db_path),
                        'FastText': ModelFastText(db_path=self.config.db_path,
-                                                 model_path=self.config.model_path)}
+                                                 model_path=self.config.fasttext_model_path)
+                       }
+        self.sample_rate = 50000
+        self.recog_model = Model(self.config.vosk_model_path)
+        self.rec = KaldiRecognizer(self.recog_model, self.sample_rate)
         self.data = get_clear_data_from_db(db_path=self.config.db_path)
 
     def predict(self, raw_query: str):
@@ -155,3 +163,26 @@ class Domain:
                                          include_plotlyjs=True,
                                          output_type='div')
         return html_otput
+
+    def speech_recognition(self, file):
+        wf = wave.open(file, "rb")
+        result = ''
+        last_n = False
+        while True:
+            data = wf.readframes(self.sample_rate)
+            if len(data) == 0:
+                break
+
+            if self.rec.AcceptWaveform(data):
+                res = json.loads(self.rec.Result())
+
+                if res['text'] != '':
+                    result += f" {res['text']}"
+                    last_n = False
+                elif not last_n:
+                    result += '\n'
+                    last_n = True
+
+        res = json.loads(self.rec.FinalResult())
+        result += f" {res['text']}"
+        return result

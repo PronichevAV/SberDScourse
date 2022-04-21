@@ -17,8 +17,12 @@ class ConfigLoader:
         return self.config['db_path']
 
     @property
-    def model_path(self):
-        return self.config['model_path']
+    def fasttext_model_path(self):
+        return self.config['fasttext_model_path']
+
+    @property
+    def vosk_model_path(self):
+        return self.config['vosk_model_path']
 
     @property
     def flask_app_secret_key(self):

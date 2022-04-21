@@ -37,7 +37,12 @@ def about():
 def search():
     form = SearchForm(request.form)
     if request.method == 'POST':
-        query = form.query.data
+        if request.files.get('audio_data'):
+            f = request.files['audio_data']
+            query = domain.speech_recognition(f)
+        else:
+            query = form.query.data
+
         response = domain.predict(query)
         flash(f'Выполнен поиск по запросу "{query}"')
         return render_template('search.html', vacancies=response, form=form)

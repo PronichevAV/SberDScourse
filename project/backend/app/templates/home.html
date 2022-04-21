@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <div class="jumbotron text-center">
+        <br>
+        <h1>Добро пожаловать в сервис 'Близкие вакансии'!</h1>
+        <p class="lead">
+            Данный сервис позволяет подобрать наиболее релевантные вакансии на основании вашего запроса.
+            <br>Для начала работы перейдите на вкладку "Поиск"
+        </p>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm">{{ graph|safe }}</div>
+            <div class="col-sm">
+            </div>
+        </div>
+    </div>
+{% endblock %}

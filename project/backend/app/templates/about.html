@@ -1,0 +1,184 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<link id="theme-style" rel="stylesheet" href="assets/css/devresume.css">
+<script defer src="assets/fontawesome/js/all.min.js"></script>
+<div class="main-wrapper">
+		<div class="container px-3 px-lg-5">
+			<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
+
+				<div class="resume-header">
+					<div class="row align-items-center">
+						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
+							<h2 class="resume-name mb-0 text-uppercase">Артем Проничев</h2>
+							<div class="resume-tagline mb-3 mb-md-0">Machine Learning Engineer</div>
+						</div><!--//resume-title-->
+						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
+							<ul class="list-unstyled mb-0">
+								<li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a class="resume-link" href="tel:#">+7-937-981-73-80</a></li>
+								<li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg mr-2"></i><a class="resume-link" href="mailto:#">Pronichev.AV@bk.ru</a></li>
+								<li class="mb-2"><i class="fas fa-globe fa-fw fa-lg mr-2"></i><a class="resume-link" href="https://career.habr.com/teyoma">career.habr</a></li>
+								<li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>Самара, Россия</li>
+							</ul>
+						</div><!--//resume-contact-->
+					</div><!--//row-->
+
+				</div><!--//resume-header-->
+				<hr>
+				<div class="resume-intro py-3">
+					<div class="media flex-column flex-md-row align-items-center">
+						<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="assets/images/resume-profile.png" alt="image">
+						<div class="media-body text-left">
+                           <p><strong>Научный бэкграунд:</strong><br></p>
+                            <li>Лучший выпускник ФГБОУ ВО СамГТУ 2019 года;</li>
+                            <li>Неоднократный победитель и призер международных конференций, форумов и чемпионатов;</li>
+                            <li>Имею более 80 научных публикаций, входящих в том числе в Scopus, ВАК и РИНЦ;</li>
+                            <li>Грантополучатель по программе "УМНИК" от Фонда содействия инновациям;</li>
+                            <li>Стипендиат Президента РФ, стипендиат БФ Владимира Потанина;</li>
+                            <li>В настоящее время пишу кандидатскую диссертацию (ML в электроэнергетике).</li>
+                            <br>
+                            <p><strong>Участие в соревнованиях:</strong></p>
+                            <li>Evraz AI Challenge (10/100 место) - предсказание содержания углерода и температуры чугуна в процессе продувки металла, 2021;</li>
+                            <li>RaifHack DS - модель оценки стоимости коммерческой недвижимости, 2021;</li>
+                            <li>Open Data Battle (55/500 место) - прогнозирование ошибки модели оценки вероятности дефолта (MPP), 2021;</li>
+                            <li>DS хакатон МКБ - прогноз вероятности невыполнения контракта поставщиком, 2021;</li>
+                            <li>Megafon неХакатон - прогноз трафика на базовых станциях, 2021.</li>
+						</div><!--//media-body-->
+					</div>
+				</div><!--//resume-intro-->
+                <hr>
+				<div class="resume-body">
+					<div class="row">
+						<div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
+							<section class="work-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Опыт работы</h3>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">ML-инженер</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">СберТех   | 2021 - н.в.</div>
+
+									</div>
+									<div class="item-content">
+                                        <p><strong></strong>Разработка ML-решений для реализации функционала <a class="theme-link" href="https://habr.com/ru/company/sberbank/blog/594709/" rel="nofollow">Predictive Autoscaler и Anomaly Detection.</a> </p>
+										<ul class="resume-list">
+											<li>Анализ данных, проверка гипотез, создание и обучение моделей;</li>
+                                            <li>Разработка программ для автоматической предобработки и обучения моделей;</li>
+                                            <li>Реализация средств для разворачивания ML-сервисов в облачной инфраструктуре.</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+                                <div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Инженер</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">СамараНИПИнефть   | 2019 - 2021</div>
+
+									</div>
+									<div class="item-content">
+										<ul class="resume-list">
+											<li>Реализованы небольшие средства автоматизации на основе Python и Excel. В частности, создана программа, позволяющая автоматически формировать выводы по выполненным расчетам (Python, Pandas);</li>
+                                            <li>В 2021 году выполнил научную работу по созданию вероятностной модели прогнозирования приведенной стоимости владения электрооборудованием (Python, Pandas, Numpy, Matplotlib). С данной работой стал призером конференции молодых специалистов;</li>
+                                            <li>За время работы неоднократно являлся докладчиком на международных конференциях и форумах.</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+
+							</section><!--//work-section-->
+
+                            <section class="project-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Высшее образование</h3>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Магистр</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">ФГБОУ ВО СамГТУ | 2019-2021</div>
+									</div>
+									<div class="item-content">
+                                        <p>Релейная защита, автоматизация и управление режимами электроэнергетических систем</p>
+									</div>
+								</div><!--//item-->
+                                <div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Бакалавр</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">ФГБОУ ВО СамГТУ | 2015-2019</div>
+									</div>
+									<div class="item-content">
+                                        <p>Электроэнергетические системы и сети</p>
+									</div>
+								</div><!--//item-->
+
+							<section class="project-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Дополнительное образование</h3>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Школа Data Scientist</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">СберУниверситет | 2022</div>
+									</div>
+									<div class="item-content">
+										<p>Повышение квалификации</p>
+									</div>
+								</div><!--//item-->
+                                <div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Аналитик данных</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Яндекс.Практикум | 2020</div>
+									</div>
+									<div class="item-content">
+										<p>Повышение квалификации</p>
+									</div>
+								</div><!--//item-->
+                                <div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Переводчик в сфере профессиональной коммуникации</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">ФГБОУ ВО СамГТУ | 2019</div>
+									</div>
+									<div class="item-content">
+										<p>Профессиональная переподготовка</p>
+									</div>
+								</div><!--//item-->
+							</section><!--//project-section-->
+						</div><!--//resume-main-->
+						<aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
+							<section class="skills-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Навыки</h3>
+								<div class="item">
+									<h4 class="item-title">Hard</h4>
+									<ul class="list-unstyled resume-skills-list">
+										<li class="mb-2">Python<li>
+                                        <li class="mb-2">Pandas/numpy/sklearn</li>
+                                        <li class="mb-2">Catboost/Xgboost/LightGBM</li>
+                                        <li class="mb-2">LightAutoML/Etna</li>
+                                        <li class="mb-2">PostgreSQL/MongoDB</li>
+                                        <li class="mb-2">Docker/Kubernetes/OpenShift</li>
+                                        <li class="mb-2">BitBucket/Jira/Confluence</li>
+										</ul>
+									</div><!--//item-->
+									<div class="item">
+										<h4 class="item-title">Soft</h4>
+										<ul class="list-unstyled resume-skills-list">
+											<li class="mb-2">Публичные выступления</li>
+											<li class="mb-2">Решение проблем<li>
+                                            <li class="mb-2">Критическое мышление</li>
+											</ul>
+										</div><!--//item-->
+									</section><!--//skills-section-->
+
+									<section class="education-section py-3">
+										<h3 class="text-uppercase resume-section-heading mb-4">Награды</h3>
+										<ul class="list-unstyled resume-awards-list">
+											<li class="mb-3">
+												<div class="font-weight-bold">Чемпионат "Case-In"</div>
+                                                <div class="text-muted">Победитель</div>
+												<div class="text-muted"><i>Москва (2019)</i></div>
+											</li>
+											<li>
+												<div class="font-weight-bold">CIGRE SC D2 Colloquium</div>
+                                                <div class="text-muted">Призер</div>
+												<div class="text-muted"><i>Хельсинки (2019)</i></div>
+											</li>
+										</ul>
+									</section><!--//education-section-->
+								</aside><!--//resume-aside-->
+							</div><!--//row-->
+						</div><!--//resume-body-->
+    </div><!--//container-->
+</div><!--//main-wrapper-->
+{% endblock %}

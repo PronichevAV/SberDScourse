@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="jumbotron text-left d-flex flex-column">
+        <br>
+        <h1>Поиск вакансий</h1><br>
+    {% from 'includes/_formhelpers.html' import render_field %}
+        <form method="POST" action="">
+            <div class="form-group" style="width:100%">
+                {{ render_field(form.query, class_="form-control") }}
+            </div><br>
+            <p><input type="submit" class="btn btn-primary" value="Выполнить"></p>
+        </form>
+        {% if vacancies %}
+        {% include "includes/_messages.html" %}
+        <br><h3>Наиболее подходящие вакансии</h3><br>
+        {% endif %}
+        <div class="accordion" id="accordion">
+            <ul>
+                {% for vacancy in vacancies %}
+                    <div class="accordion-item" style="width:100%">
+                    <h2 class="accordion-header" id="heading-{{ vacancy.id }}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ vacancy.id }}" aria-expanded="false" aria-controls="collapse-{{ vacancy.id }}">
+                    {{ vacancy.title }}
+                    </button>
+                    </h2>
+                    <div id="collapse-{{ vacancy.id }}" class="accordion-collapse collapse" aria-labelledby="heading-{{ vacancy.id }}" data-bs-parent="#accordion">
+                    <div class="accordion-body">
+                        <a href="{{ vacancy.url }}"><i>{{ vacancy.company }}</i></a>  <br><br>
+                         {{ vacancy.description|safe}}<br><br>
+                      <i>Score: {{ vacancy.score }}</i>
+                    </div>
+                    </div>
+                    </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

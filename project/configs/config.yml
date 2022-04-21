@@ -1,0 +1,3 @@
+update_data: False
+db_path: '/db/database.sqlite'
+model_path: './models/fasttext_model/pretrained_models/ft_native_300_ru_wiki_lenta_lemmatize.bin'
